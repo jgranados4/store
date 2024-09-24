@@ -1,5 +1,6 @@
-
-
+@defer { @if(productDetailState.status() === 'loading'){
+<h1>loading</h1>
+}@else{
 <section class="py-8 bg-white md:py-16 dark:bg-gray-900 antialiased">
   <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
     <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
@@ -30,6 +31,7 @@
             title=""
             class="text-white mt-4 sm:mt-0 bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800 flex items-center justify-center"
             role="button"
+            (click)="addToCart()"
           >
             <svg
               class="w-5 h-5 -ms-2 me-2"
@@ -62,3 +64,6 @@
     </div>
   </div>
 </section>
+} }@loading(after 100ms;minimum 3s) {
+<h1>cargando</h1>
+}
